@@ -60,7 +60,7 @@ public class DoubleLinkedList <E>{//create this class to easy find the userName 
         }
     }
     
-    public String findPassword(String name){//find the password by the userName
+    public String findPassword(String userEmail){//find the password by the userEmail
         DNode<E> ptr=head;
         
         while(ptr!=null){
@@ -68,7 +68,8 @@ public class DoubleLinkedList <E>{//create this class to easy find the userName 
             String[] part=(user).split(",");
             String userName=part[0];
             String password=part[1];
-            while(name.equals(userName)){
+            String email=part[2];
+            while(userEmail.equals(email)){
                 return password;
             }
             ptr=ptr.next; 
